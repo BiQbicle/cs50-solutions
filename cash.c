@@ -24,8 +24,21 @@ int main(void) {
     unsigned short cent_count = 0;
 
     while (total_change_owed > 0) {
-        // todo
+        if (total_change_owed >= QUARTER) {
+            cent_count++;
+            total_change_owed = (total_change_owed - QUARTER);
+        } else if (total_change_owed >= DIME) {
+            cent_count++;
+            total_change_owed = (total_change_owed - DIME);
+        } else if (total_change_owed >= NICKEL) {
+            cent_count++;
+            total_change_owed = (total_change_owed - NICKEL);
+        } else if (total_change_owed >= PENNY) {
+            cent_count++;
+            total_change_owed = (total_change_owed - PENNY);
+        }
     }
+    printf("%d", cent_count);
 
     return 0;
 }
